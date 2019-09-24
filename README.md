@@ -1,2 +1,2 @@
 # libft
-function library
+Function library.
