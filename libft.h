@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 12:49:39 by rfork             #+#    #+#             */
-/*   Updated: 2019/09/22 17:39:38 by rfork            ###   ########.fr       */
+/*   Updated: 2020/01/28 16:34:19 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,5 +149,7 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 
 int					ft_isblank(int c);
+
+int					get_next_line(const int fd, char **line);
 
 #endif
