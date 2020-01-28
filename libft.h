@@ -6,16 +6,21 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 12:49:39 by rfork             #+#    #+#             */
-/*   Updated: 2020/01/28 16:34:19 by rfork            ###   ########.fr       */
+/*   Updated: 2020/01/25 11:12:40 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_LIBFT_H
 # define LIBFT_LIBFT_H
+# define BUFF_SIZE 10000
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <limits.h>
 
 typedef struct		s_list
 {
