@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 12:49:39 by rfork             #+#    #+#             */
-/*   Updated: 2020/01/25 11:12:40 by rfork            ###   ########.fr       */
+/*   Updated: 2020/03/02 19:38:47 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,5 +156,7 @@ int					ft_islower(int c);
 int					ft_isblank(int c);
 
 int					get_next_line(const int fd, char **line);
+
+int					ft_count_words(char const *s, char c);
 
 #endif

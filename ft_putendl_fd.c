@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 20:45:37 by rfork             #+#    #+#             */
-/*   Updated: 2019/09/18 16:06:13 by rfork            ###   ########.fr       */
+/*   Updated: 2020/03/02 18:52:14 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ void	ft_putendl_fd(char const *s, int fd)
 
 	if (s)
 	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-		write(fd, "\n", 1);
+		i = -1;
+		while (s[++i])
+			ft_putchar_fd(s[i], fd);
+		ft_putchar_fd('\n', fd);
 	}
 }

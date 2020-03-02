@@ -6,7 +6,7 @@
 #    By: rfork <rfork@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:29:02 by rfork             #+#    #+#              #
-#    Updated: 2020/01/28 16:27:25 by rfork            ###   ########.fr        #
+#    Updated: 2020/03/02 19:22:49 by dovran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ SRCS = ft_atoi.c \
        ft_isspace.c \
        ft_iscntrl.c \
        ft_isblank.c \
-	   get_next_line.c
+	   get_next_line.c \
+	   ft_count_words.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = libft.h
 

@@ -22,7 +22,7 @@ char	*ft_strdup(const char *src)
 	if (!(des = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	i = -1;
-	while (src[++i] != '\0')
+	while (src[++i])
 		des[i] = src[i];
 	des[i] = '\0';
 	return (des);
