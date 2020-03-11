@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   lib_put.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dovran <dovran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 12:49:39 by rfork             #+#    #+#             */
-/*   Updated: 2020/03/11 17:14:51 by dovran           ###   ########.fr       */
+/*   Created: 2020/03/11 17:08:49 by dovran            #+#    #+#             */
+/*   Updated: 2020/03/11 17:08:49 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# define BUFF_SIZE 10000
+#ifndef LIB_PUT_H
+#define LIB_PUT_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,18 +21,22 @@
 # include <fcntl.h>
 # include <limits.h>
 
-# include "is/lib_is.h"
-# include "list/lib_lst.h"
-# include "memory/lib_mem.h"
-# include "put/lib_put.h"
-# include "string/lib_str.h"
+#include "../libft.h"
 
-int					ft_atoi(const char *str);
+void				ft_putchar(char c);
 
-char				*ft_itoa(int n);
+void				ft_putchar_fd(char c, int fd);
 
-void				ft_bzero(void *s, size_t n);
+void				ft_putnbr(int n);
 
-int					get_next_line(const int fd, char **line);
+void				ft_putstr(char const *s);
+
+void				ft_putstr_fd(char const *s, int fd);
+
+void				ft_putnbr_fd(int n, int fd);
+
+void				ft_putendl(char const *s);
+
+void				ft_putendl_fd(char const *s, int fd);
 
 #endif

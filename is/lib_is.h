@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   lib_is.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dovran <dovran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 12:49:39 by rfork             #+#    #+#             */
-/*   Updated: 2020/03/11 17:14:51 by dovran           ###   ########.fr       */
+/*   Created: 2020/03/11 17:10:21 by dovran            #+#    #+#             */
+/*   Updated: 2020/03/11 17:13:41 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# define BUFF_SIZE 10000
+#ifndef LIB_IS_H
+#define LIB_IS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,18 +21,30 @@
 # include <fcntl.h>
 # include <limits.h>
 
-# include "is/lib_is.h"
-# include "list/lib_lst.h"
-# include "memory/lib_mem.h"
-# include "put/lib_put.h"
-# include "string/lib_str.h"
+#include "../libft.h"
 
-int					ft_atoi(const char *str);
+int					ft_isspace(int c);
 
-char				*ft_itoa(int n);
+int					ft_iscntrl(int c);
 
-void				ft_bzero(void *s, size_t n);
+int					ft_isupper(int c);
 
-int					get_next_line(const int fd, char **line);
+int					ft_islower(int c);
+
+int					ft_isblank(int c);
+
+int					ft_isalpha(int c);
+
+int					ft_isdigit(int c);
+
+int					ft_isalnum(int c);
+
+int					ft_isascii(int c);
+
+int					ft_isprint(int c);
+
+int					ft_toupper(int c);
+
+int					ft_tolower(int c);
 
 #endif
