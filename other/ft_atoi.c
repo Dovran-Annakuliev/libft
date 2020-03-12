@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lib_othr.h"
 
 static int	ft_check1(long long int a, const char *str, int i, int m)
 {

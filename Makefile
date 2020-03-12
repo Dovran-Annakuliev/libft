@@ -72,10 +72,10 @@ SRCS = is/ft_isalnum.c \
        string/ft_strsub.c \
        string/ft_strtrim.c \
        string/ft_count_words.c \
-       ft_atoi.c \
-       ft_itoa.c \
-       ft_bzero.c \
-	   get_next_line.c
+       other/ft_atoi.c \
+       other/ft_itoa.c \
+       other/ft_bzero.c \
+	   other/get_next_line.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = libft.h
 
