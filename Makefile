@@ -75,7 +75,11 @@ SRCS = is/ft_isalnum.c \
        other/ft_atoi.c \
        other/ft_itoa.c \
        other/ft_bzero.c \
-	   other/get_next_line.c
+	   other/get_next_line.c \
+	   complex/ft_cplxadd.c \
+	   complex/ft_cplxsub.c \
+	   complex/ft_cplxmul.c \
+	   complex/ft_cplxdiv.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = libft.h
 

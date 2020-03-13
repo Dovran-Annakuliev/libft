@@ -35,8 +35,7 @@ static int	ft_save(char **line, char **s_buf)
 
 static int	errors(const int fd)
 {
-//	if (fd < 0 || fd > OPEN_MAX || BUFF_SIZE == 0)
-	if (fd < 0 || fd > 10240 || BUFF_SIZE == 0)
+	if (fd < 0 || fd > OPEN_MAX || BUFF_SIZE == 0)
 		return (1);
 	return (0);
 }
@@ -44,8 +43,7 @@ static int	errors(const int fd)
 int			get_next_line(const int fd, char **line)
 {
 	char		buf[BUFF_SIZE + 1];
-//	static char	*s_buf[OPEN_MAX];
-	static char	*s_buf[10240];
+	static char	*s_buf[OPEN_MAX];
 	int			ret;
 	char		*temp;
 
