@@ -21,9 +21,9 @@ typedef struct		s_complex
 	int 			b;
 }					t_complex;
 
-void				ft_cplxadd(t_complex c1, t_complex c2, t_complex c);
-void				ft_cplxsub(t_complex c1, t_complex c2, t_complex c);
-void				ft_cplxmul(t_complex c1, t_complex c2, t_complex c);
-void				ft_cplxdiv(t_complex c1, t_complex c2, t_complex c);
+t_complex			ft_cplxadd(t_complex c1, t_complex c2, t_complex c);
+t_complex			ft_cplxsub(t_complex c1, t_complex c2, t_complex c);
+t_complex			ft_cplxmul(t_complex c1, t_complex c2, t_complex c);
+t_complex			ft_cplxdiv(t_complex c1, t_complex c2, t_complex c);
 
 #endif
