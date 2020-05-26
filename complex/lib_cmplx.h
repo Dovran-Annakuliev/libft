@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 12:09:51 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/25 18:26:23 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ typedef struct		s_complex
 	int 			b;
 }					t_complex;
 
-t_complex			ft_cplxadd(t_complex c1, t_complex c2, t_complex c);
-t_complex			ft_cplxsub(t_complex c1, t_complex c2, t_complex c);
-t_complex			ft_cplxmul(t_complex c1, t_complex c2, t_complex c);
-t_complex			ft_cplxdiv(t_complex c1, t_complex c2, t_complex c);
+void				ft_cplxadd(t_complex c1, t_complex c2, t_complex c);
+void				ft_cplxsub(t_complex c1, t_complex c2, t_complex c);
+void				ft_cplxmul(t_complex c1, t_complex c2, t_complex c);
+void				ft_cplxdiv(t_complex c1, t_complex c2, t_complex c);
 
 #endif
