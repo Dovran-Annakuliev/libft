@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 15:05:17 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,31 @@ static void		*ft_free_split(char **arr, size_t k)
 {
 	size_t i;
 
-	i = -1;
-	while (++i < k)
-		ft_strdel(&arr[i]);
+	i = 0;
+	while (i < k)
+		ft_strdel(&arr[i++]);
 	free(arr);
 	arr = NULL;
 	return (NULL);
 }
 
-static size_t	ft_count_len(const char *s, char c, size_t i)
+static int		ft_strlen_split1(char const *s, char c)
+{
+	int i;
+	int len1;
+
+	i = 0;
+	len1 = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			len1++;
+		i++;
+	}
+	return (len1);
+}
+
+static size_t	ft_strlen_split2(const char *s, char c, size_t i)
 {
 	size_t k;
 
@@ -39,23 +55,26 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	k;
 	size_t	l;
-	char	**split;
+	char	**arr;
 
-	i = -1;
+	i = 0;
 	if (!s)
 		return (NULL);
-	k = ft_count_words(s, c);
-	if (!(split = (char**)malloc(sizeof(char*) * (k + 1))))
+	k = ft_strlen_split1(s, c);
+	if (!(arr = (char**)malloc(sizeof(char*) * (k + 1))))
 		return (NULL);
-	k = -1;
-	while (s[++i])
+	k = 0;
+	while (s[i])
+	{
 		if (s[i] != c)
 		{
-			l = ft_count_len(s, c, i);
-			if (!(split[++k] = ft_strsub(s, i, l)))
-				return (ft_free_split(split, k));
+			l = ft_strlen_split2(s, c, i);
+			if (!(arr[k++] = ft_strsub(s, i, l)))
+				return (ft_free_split(arr, k - 1));
 			i = i + l - 1;
 		}
-	split[k] = NULL;
-	return (split);
+		i++;
+	}
+	arr[k] = NULL;
+	return (arr);
 }
