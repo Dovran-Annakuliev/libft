@@ -6,7 +6,7 @@
 /*   By: rfork <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 20:21:17 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
-	int		flag;
+	int		b;
 
-	flag = 0;
-	i = -1;
-	while ((++i < n) && flag == 0)
+	b = 0;
+	i = 0;
+	while (i < n)
 	{
-		if (src[i])
+		if (src[i] != '\0' && b == 0)
 			dest[i] = src[i];
 		else
 		{
 			dest[i] = '\0';
-			flag = 1;
+			b = 1;
 		}
+		i++;
 	}
 	return (dest);
 }

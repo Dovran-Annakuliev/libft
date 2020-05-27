@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 19:47:43 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	i = 0;
 	j = 0;
-	while (s1[i])
+	while (s1[i] != '\0')
 		i++;
-	while (s2[j] && j != n)
+	while (s2[j] != '\0' && j != n)
 	{
 		s1[i] = s2[j];
 		i++;

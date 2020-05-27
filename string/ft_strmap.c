@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 13:01:24 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,21 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		len;
 	char	*arr;
 
-	i = -1;
+	i = 0;
 	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
-	if (!(arr = (char *)malloc(sizeof(char) * len + 1)))
+	arr = (char *)malloc(sizeof(char) * len + 1);
+	if (arr)
+	{
+		while (s[i] != '\0')
+		{
+			arr[i] = (*f)(s[i]);
+			i++;
+		}
+		arr[i] = '\0';
+		return (arr);
+	}
+	else
 		return (NULL);
-	while (s[++i])
-		arr[i] = (*f)(s[i]);
-	arr[i] = '\0';
-	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 14:03:09 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@ void	*ft_memalloc(size_t size)
 	size_t	i;
 	char	*arr;
 
-	i = -1;
-	if (!(arr = (char*)malloc(sizeof(char) * size)))
+	i = 0;
+	arr = (char*)malloc(sizeof(char) * size);
+	if (arr)
+	{
+		while (i < size)
+		{
+			arr[i] = '\0';
+			i++;
+		}
+		return (arr);
+	}
+	else
 		return (NULL);
-	while (++i < size)
-		arr[i] = '\0';
-	return (arr);
 }

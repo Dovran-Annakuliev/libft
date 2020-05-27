@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 18:36:59 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ char	*ft_strnstr(const char *str, const char *fn, size_t n)
 	int		k;
 	size_t	m;
 
-	i = -1;
+	i = 0;
 	k = 0;
 	m = 0;
-	if (!fn)
+	if (fn[i] == '\0')
 		return ((char*)str);
-	while (str[++i])
+	while (str[i] != '\0')
 	{
 		k = 0;
-		while (str[i + m] && fn[m] && k != 1 && (i + m < n))
+		while (str[i + m] != '\0' && fn[m] != '\0' && k != 1 && (i + m < n))
 			if (fn[m] == str[i + m])
 				m++;
 			else
@@ -34,8 +34,9 @@ char	*ft_strnstr(const char *str, const char *fn, size_t n)
 				k = 1;
 				m = 0;
 			}
-		if (!fn[m])
+		if (fn[m] == '\0')
 			return ((char*)(str + i));
+		i++;
 	}
 	return (0);
 }

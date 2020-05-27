@@ -6,7 +6,7 @@
 /*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 14:30:13 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/05/27 17:07:09 by dovran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,40 @@
 
 static char	*ft_check2(void)
 {
-	char *trim;
+	char *arr;
 
-	if (!(trim = (char *)malloc(sizeof(char) * (1))))
+	arr = (char *)malloc(sizeof(char) * (1));
+	if (arr)
+	{
+		arr[0] = '\0';
+		return (arr);
+	}
+	else
 		return (NULL);
-	trim[0] = '\0';
-	return (trim);
 }
 
 static char	*ft_check1(char const *s, int start, int end)
 {
 	int		i;
 	int		j;
-	char	*trim;
+	char	*arr;
 
 	j = 0;
 	i = start;
-	if (!(trim = (char*)malloc(sizeof(char) * (end - start + 2))))
-		return (NULL);
-	while (i < (end + 1))
+	arr = (char*)malloc(sizeof(char) * (end - start + 2));
+	if (arr)
 	{
-		trim[j] = s[i];
-		j++;
-		i++;
+		while (i < (end + 1))
+		{
+			arr[j] = s[i];
+			j++;
+			i++;
+		}
+		arr[j] = '\0';
+		return (arr);
 	}
-	trim[j] = '\0';
-	return (trim);
+	else
+		return (NULL);
 }
 
 char		*ft_strtrim(char const *s)
@@ -47,22 +55,24 @@ char		*ft_strtrim(char const *s)
 	int		i;
 	int		start;
 	int		end;
-	char	*trim;
+	char	*arr;
 
 	if (!s)
 		return (NULL);
 	i = -1;
 	start = 0;
 	end = 0;
-	while (s[++i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i])
+	while (s[++i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t')
 		start++;
-	i--;
-	while (s[++i])
-		if (s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
+	while (s[i] != '\0')
+	{
+		if (s[i] != ' ' && s[i] != ',' && s[i] != '\n' && s[i] != '\t')
 			end = i;
+		i++;
+	}
 	if (start > end)
-		trim = ft_check2();
+		arr = ft_check2();
 	else
-		trim = ft_check1(s, start, end);
-	return (trim);
+		arr = ft_check1(s, start, end);
+	return (arr);
 }
