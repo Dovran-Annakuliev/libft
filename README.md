@@ -1,2 +1,2 @@
 # libft
-Function library.
+My implementation of standart C library.
