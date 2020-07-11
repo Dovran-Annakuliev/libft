@@ -1,19 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_cplxsub.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rfork <rfork@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/13 12:19:26 by rfork             #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "lib_cmplx.h"
 
-t_complex ft_cplxsub(t_complex c1, t_complex c2, t_complex c)
+t_complex ft_cplxsub(t_complex c1, t_complex c2)
 {
+	t_complex c;
 	c.a = c1.a - c2.a;
 	c.b = c1.b - c2.b;
 	return(c);
