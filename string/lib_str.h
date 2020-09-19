@@ -6,7 +6,7 @@
 /*   By: dovran <dovran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 16:59:42 by dovran            #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/09/19 16:11:12 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 								size_t len);
 char				**ft_strsplit(char const *s, char c);
 
+char				**ft_strsplit_space(char const *s);
+
 char				*ft_strstr(const char *str, const char *to_find);
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
@@ -74,6 +76,8 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 
 int					ft_count_words(char const *s, char c);
+
+int					ft_count_words_split(const char **s);
 
 void				ft_strdel(char **as);
 

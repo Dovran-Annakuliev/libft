@@ -6,7 +6,7 @@
 /*   By: dovran <dovran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:13:12 by dovran            #+#    #+#             */
-/*   Updated: 2020/05/26 18:29:40 by dovran           ###   ########.fr       */
+/*   Updated: 2020/09/19 16:08:05 by rfork            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 # include "../libft.h"
 
 int					ft_atoi(const char *str);
+
+float				ft_atof(const char *str);
 
 char				*ft_itoa(int n);
 

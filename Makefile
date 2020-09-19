@@ -6,91 +6,107 @@
 #    By: rfork <rfork@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:29:02 by rfork             #+#    #+#              #
-#    Updated: 2020/05/27 17:16:47 by dovran           ###   ########.fr        #
+#    Updated: 2020/09/19 16:17:42 by rfork            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-SRCS = is/ft_isalnum.c \
-       is/ft_isalpha.c \
-       is/ft_isascii.c \
-       is/ft_isdigit.c \
-       is/ft_isprint.c \
-       is/ft_isupper.c \
-       is/ft_islower.c \
-       is/ft_isspace.c \
-       is/ft_iscntrl.c \
-       is/ft_isblank.c \
-       is/ft_tolower.c \
-       is/ft_toupper.c \
-       list/ft_lstadd.c \
-       list/ft_lstdel.c \
-       list/ft_lstdelone.c \
-       list/ft_lstiter.c \
-       list/ft_lstmap.c \
-       list/ft_lstnew.c \
-       memory/ft_memalloc.c \
-       memory/ft_memccpy.c \
-       memory/ft_memchr.c \
-       memory/ft_memcmp.c \
-       memory/ft_memcpy.c \
-       memory/ft_memdel.c \
-       memory/ft_memmove.c \
-       memory/ft_memset.c \
-       put/ft_putchar.c \
-       put/ft_putchar_fd.c \
-       put/ft_putendl.c \
-       put/ft_putendl_fd.c \
-       put/ft_putnbr.c \
-       put/ft_putnbr_fd.c \
-       put/ft_putstr.c \
-       put/ft_putstr_fd.c \
-       string/ft_strcat.c \
-       string/ft_strchr.c \
-       string/ft_strclr.c \
-       string/ft_strcmp.c \
-       string/ft_strcpy.c \
-       string/ft_strdel.c \
-       string/ft_strdup.c \
-       string/ft_strequ.c \
-       string/ft_striter.c \
-       string/ft_striteri.c \
-       string/ft_strjoin.c \
-       string/ft_strlcat.c \
-       string/ft_strlen.c \
-       string/ft_strmap.c \
-       string/ft_strmapi.c \
-       string/ft_strncat.c \
-       string/ft_strncmp.c \
-       string/ft_strncpy.c \
-       string/ft_strnequ.c \
-       string/ft_strnew.c \
-       string/ft_strnstr.c \
-       string/ft_strrchr.c \
-       string/ft_strsplit.c \
-       string/ft_strstr.c \
-       string/ft_strsub.c \
-       string/ft_strtrim.c \
-       string/ft_count_words.c \
-       other/ft_atoi.c \
-       other/ft_itoa.c \
-       other/ft_bzero.c \
-	   other/get_next_line.c \
-	   complex/ft_cplxadd.c \
-	   complex/ft_cplxsub.c \
-	   complex/ft_cplxmul.c \
-	   complex/ft_cplxdiv.c
-OBJS = $(SRCS:.c=.o)
+GCC = gcc $(FALGS)
+FLAGS = -Wall -Wextra -Werror
+
 INCLUDES = libft.h
+
+IS_DIR = is/
+LST_DIR = list/
+MEM_DIR = memory/
+PUT_DIR = put/
+STR_DIR = string/
+OTH_DIR = other/
+CPLX_DIR = complex/
+
+NAME = libft.a
+SRCS = $(IS_DIR)ft_isalnum.c \
+       $(IS_DIR)ft_isalpha.c \
+       $(IS_DIR)ft_isascii.c \
+       $(IS_DIR)ft_isdigit.c \
+       $(IS_DIR)ft_isprint.c \
+       $(IS_DIR)ft_isupper.c \
+       $(IS_DIR)ft_islower.c \
+       $(IS_DIR)ft_isspace.c \
+       $(IS_DIR)ft_iscntrl.c \
+       $(IS_DIR)ft_isblank.c \
+       $(IS_DIR)ft_tolower.c \
+       $(IS_DIR)ft_toupper.c \
+       $(LST_DIR)ft_lstadd.c \
+	   $(LST_DIR)ft_lstdel.c \
+       $(LST_DIR)ft_lstdelone.c \
+       $(LST_DIR)ft_lstiter.c \
+       $(LST_DIR)ft_lstmap.c \
+       $(LST_DIR)ft_lstnew.c \
+       $(MEM_DIR)ft_memalloc.c \
+       $(MEM_DIR)ft_memccpy.c \
+       $(MEM_DIR)ft_memchr.c \
+       $(MEM_DIR)ft_memcmp.c \
+       $(MEM_DIR)ft_memcpy.c \
+       $(MEM_DIR)ft_memdel.c \
+       $(MEM_DIR)ft_memmove.c \
+       $(MEM_DIR)ft_memset.c \
+       $(PUT_DIR)ft_putchar.c \
+       $(PUT_DIR)ft_putchar_fd.c \
+       $(PUT_DIR)ft_putendl.c \
+       $(PUT_DIR)ft_putendl_fd.c \
+       $(PUT_DIR)ft_putnbr.c \
+       $(PUT_DIR)ft_putnbr_fd.c \
+       $(PUT_DIR)ft_putstr.c \
+       $(PUT_DIR)ft_putstr_fd.c \
+       $(STR_DIR)ft_strcat.c \
+       $(STR_DIR)ft_strchr.c \
+       $(STR_DIR)ft_strclr.c \
+       $(STR_DIR)ft_strcmp.c \
+       $(STR_DIR)ft_strcpy.c \
+       $(STR_DIR)ft_strdel.c \
+       $(STR_DIR)ft_strdup.c \
+       $(STR_DIR)ft_strequ.c \
+       $(STR_DIR)ft_striter.c \
+       $(STR_DIR)ft_striteri.c \
+       $(STR_DIR)ft_strjoin.c \
+       $(STR_DIR)ft_strlcat.c \
+       $(STR_DIR)ft_strlen.c \
+       $(STR_DIR)ft_strmap.c \
+       $(STR_DIR)ft_strmapi.c \
+       $(STR_DIR)ft_strncat.c \
+       $(STR_DIR)ft_strncmp.c \
+       $(STR_DIR)ft_strncpy.c \
+       $(STR_DIR)ft_strnequ.c \
+       $(STR_DIR)ft_strnew.c \
+       $(STR_DIR)ft_strnstr.c \
+       $(STR_DIR)ft_strrchr.c \
+       $(STR_DIR)ft_strsplit.c \
+       $(STR_DIR)ft_strsplit_space.c \
+       $(STR_DIR)ft_strstr.c \
+       $(STR_DIR)ft_strsub.c \
+       $(STR_DIR)ft_strtrim.c \
+       $(STR_DIR)ft_count_words.c \
+	   $(STR_DIR)ft_count_words_split.c \
+       $(OTH_DIR)ft_atoi.c \
+	   $(OTH_DIR)ft_atof.c \
+       $(OTH_DIR)ft_itoa.c \
+       $(OTH_DIR)ft_bzero.c \
+	   $(OTH_DIR)get_next_line.c \
+	   $(CPLX_DIR)ft_cplxadd.c \
+	   $(CPLX_DIR)ft_cplxsub.c \
+	   $(CPLX_DIR)ft_cplxmul.c \
+	   $(CPLX_DIR)ft_cplxdiv.c
+
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+%.o: %.c
+		$(GCC) -c $< -o $@ -I $(INCLUDES)
+
+$(NAME): $(OBJS) #$(INCLUDES)libft.h
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)
-
-%.o: %.c
-		gcc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
 		rm -f $(OBJS)
